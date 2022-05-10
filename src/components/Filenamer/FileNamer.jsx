@@ -33,6 +33,7 @@ const validate = e =>{
         autoComplete='off'
         onChange={e => setNmae(e.target.value)}
           onFocus={() =>setAlert(true)}
+          onBlur={() =>setAlert(false)}
         />
       </label>
 
