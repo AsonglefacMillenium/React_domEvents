@@ -13,7 +13,8 @@ const [alert, setAlert] = useState(false);
 const validate = e =>{
   if(/\*/.test(name)){
     e.preventDefault();
-    setAlert(true)
+    setAlert(true);
+    return;
   }
 
   setAlert(false)
@@ -30,10 +31,18 @@ const validate = e =>{
       <p>Name</p>
         <input type="text" name='name' placeholder='name' 
         autoComplete='off'
-        onChange={e => setNmae(e.target.value)}/>
+        onChange={e => setNmae(e.target.value)}
+          onFocus={() =>setAlert(true)}
+        />
       </label>
 
-      {alert && <div>Character not allowed: *</div>}
+{/* Alert message on focus*/}
+      {alert && 
+      <div>
+        <span role='img' aria-label='allowed'>✅</span> Alphanumeric are allowed and
+        <span role='img' aria-label="not-allowed">⛔</span> * is not allowed
+      </div>
+      }
 
       <div className="button">
       <button onClick={validate}>Save</button>
