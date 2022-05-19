@@ -1,5 +1,6 @@
 import React from 'react'
 import FileNamer from './components/Filenamer/FileNamer'
+import FormHandler from './components/FormHandler/FormHandler'
 
 
 //components import
@@ -8,7 +9,7 @@ import FileNamer from './components/Filenamer/FileNamer'
 const App = () => {
   return (
     <div>
-      <FileNamer/>
+      <FormHandler/>
     </div>
   )
 }
